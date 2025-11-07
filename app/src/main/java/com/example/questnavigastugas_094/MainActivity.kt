@@ -1,5 +1,6 @@
 package com.example.questnavigastugas_094
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,21 +15,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.questnavigastugas_094.ui.theme.QuestNavigasTugas_094Theme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            QuestNavigasTugas_094Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            QuestNavigasTugas_094Theme{
+                Scaffold(modifier = Modifier.fillMaxSize()) {
+                    AplikasiPendaftaran()
                 }
             }
         }
     }
-}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -44,4 +42,4 @@ fun GreetingPreview() {
     QuestNavigasTugas_094Theme {
         Greeting("Android")
     }
-}
+}}
